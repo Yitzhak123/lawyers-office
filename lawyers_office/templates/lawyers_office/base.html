@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<html>
+	<head>
+
+		<title> Desktop for children </title>
+
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/childrens_desktop.css' %}">
+		
+	</head>
+
+	<body>
+		<header>
+			<div class="page-top">
+				{% if user.is_authenticated %}
+					<p class="top-menu">Hello {{ user.username }}<small>
+					(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+				{% endif %}
+			</div>
+			<h1> Desktop for children </h1>
+		</header>
+		<div class="content">
+			
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+
+</html>
