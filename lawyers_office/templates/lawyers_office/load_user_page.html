@@ -1,9 +1,13 @@
 
 
-{% extends 'childrens_desktop/base.html' %}
+{% extends 'lawyers_office/base.html' %}
 
 {% block content %}
-	
+	<div>
+        {{ user.username }}
+        {{ user.email }}
+        {{ user.records }}
+    </div>
 {% endblock %}
 
 
