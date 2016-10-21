@@ -1,0 +1,53 @@
+
+.jacobson-law-pa-logo {
+    display: inline-block;
+    margin-left: 12px;
+    margin-right: 17px;
+    float: left;
+}
+
+.jacobson-law-pa-logo > img{
+    height: 38px;
+    width: 33px;
+    display: block;
+    margin-left: 40px;
+    margin-top: 4px;
+}
+
+.jacobson-law-pa-logo > p{
+    font-size: 90%;
+    font-weight: 600;
+    font-family: serif;
+    margin-top: 5px;
+}
+
+.hello-user{
+    color: #111111;
+    margin-left: 2px;
+    float: left;
+    margin-top: 33px;
+    border-left: 1px solid black;
+    padding-left: 10px;
+}
+
+nav{
+    font-size: 120%;
+    display: inline-block;
+    font-weight: 600;
+    margin-left: 175px;
+    margin-right: 50px;
+    margin-top: 32px;
+}
+
+nav > a{
+    color: #111111;
+    font-weight: 500;
+    display: inline-block;
+    margin-right: 10%;
+    margin-right: 80px;
+}
+
+nav > a:first-child{
+    margin-right: 95px;
+}
+

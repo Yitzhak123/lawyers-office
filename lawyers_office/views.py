@@ -30,12 +30,14 @@ from .forms import *
 
 @login_required
 def load_user_page(request):
-    user = Lawyer.objects.get(username=request.user.username)
-    return render(request, 'lawyers_office/load_user_page.html', {'user': user})
+    lawyer = Lawyer.objects.get(username=request.user.username)
+    records = lawyer.records.all()
+    return render(request, 'lawyers_office/load_user_page.html',
+                  {'lawyer': lawyer, 'records': records})
 
 
 def add_new_user(request):
-    if(request.method == "POST"):
+    if request.method == "POST":
         form = LawyerForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)

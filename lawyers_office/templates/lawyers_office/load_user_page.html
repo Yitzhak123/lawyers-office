@@ -4,9 +4,13 @@
 
 {% block content %}
 	<div>
-        {{ user.username }}
-        {{ user.email }}
-        {{ user.records }}
+        {{ user.username }}<br>
+        {{ user.email }}<br>
+        {% for record in records %}
+            {{ record.who }}<br>
+            {{ record.about }}<br>
+            <hr>
+        {% endfor %}
     </div>
 {% endblock %}
 

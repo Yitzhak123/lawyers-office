@@ -39,3 +39,5 @@ class Lawyer(models.Model):
         return '[name = '+str(self.username)+']'
 
 
+class AddFiles(models.Model):
+    image = models.ImageField(upload_to="/home/yitzhak/Downloads")

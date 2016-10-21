@@ -2,23 +2,37 @@
 <html>
 	<head>
 
-		<title> Desktop for children </title>
+		<title> Lawyers Office </title>
 
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="{% static 'css/childrens_desktop.css' %}">
+		<link rel="stylesheet" href="{% static 'css/lawyers_office.css' %}">
 		
 	</head>
 
 	<body>
 		<header>
-			<div class="page-top">
-				{% if user.is_authenticated %}
-					<p class="top-menu">Hello {{ user.username }}<small>
-					(<a href="{% url 'logout' %}">Log out</a>)</small></p>
-				{% endif %}
+
+			{% if user.is_authenticated %}
+			<div class="jacobson-law-pa-logo">
+				<img src="http://images.lawyers.com/LBM_Images/Offices/law-firm-jacobson-law-pa-photo-1596644.jpg" alt="Jacobson-law-pa logo">
+				<p>JACOBSON LAW P.A</p>
 			</div>
-			<h1> Desktop for children </h1>
+			<div class="hello-user">Hello {{ user.username }} </div>
+			{% endif %}
+
+			<nav>
+				<a href="">Tag Search</a>
+				<a href="">Text Search</a>
+				<a href="">Document Search</a>
+			</nav>
+			<input type="text" name="search" placeholder="Search..">
+			<div class="top-right-icons">
+				<a href="">{% load static %} <img src="{% static 'images/icn_settings.png' %}" alt="icn_settings" /></a>
+				<a href="">{% load static %} <img src="{% static 'images/icn_info.png' %}" alt="icn_info" /></a>
+				<a href="">{% load static %} <img src="{% static 'images/icn_exit.png' %}" alt="icn_exit" /></a>
+				<!--<a href=""><img src="{{ MEDIA_URL }}images/icn_settings.png"></a>-->
+			</div>
 		</header>
 		<div class="content">
 			

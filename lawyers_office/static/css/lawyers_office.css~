@@ -1,0 +1,6 @@
+
+header > img{
+	height: 5%;
+    width: 2.8%;
+}
+

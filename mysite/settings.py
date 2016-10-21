@@ -122,3 +122,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/lawyers_office/'
+MEDIA_ROOT = '/home/yitzhak/DjangoProject2/lawyers_office/static'
+MEDIA_URL = 'http://localhost:8000/static/'

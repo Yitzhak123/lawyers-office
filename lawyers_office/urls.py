@@ -1,9 +1,11 @@
 from django.conf.urls import url
 from . import views
-
+from django.conf import settings
 urlpatterns = [
     url(r'^$', views.load_user_page, name='load_user_page'),
     url(r'^sign_up/$', views.add_new_user, name='add_new_user'),
+
+
     # url(r'^user/new/$', views.add_new_user, name='add_new_user'),
     # url(r'^user/(?P<pk>\d+)/$', views.user_detail, name='user_detail'),
     # url(r'^user/(?P<pk>\d+)/remove', views.remove_user, name='remove_user'),
