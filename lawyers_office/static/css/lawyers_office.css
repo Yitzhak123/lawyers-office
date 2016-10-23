@@ -1,53 +1,93 @@
 
 .jacobson-law-pa-logo {
     display: inline-block;
-    margin-left: 12px;
-    margin-right: 17px;
-    float: left;
+    margin-left: 8px;
 }
 
 .jacobson-law-pa-logo > img{
-    height: 38px;
-    width: 33px;
+    height: 43px;
+    width: 40px;
     display: block;
     margin-left: 40px;
-    margin-top: 4px;
+    margin-top: 7px;
 }
 
 .jacobson-law-pa-logo > p{
-    font-size: 90%;
+    font-size: 70%;
     font-weight: 600;
-    font-family: serif;
-    margin-top: 5px;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+.vertical-line{
+    position: absolute;
+    display: inline-block;
+    left: 150px;
+    top: 18px;
+    color: #111111;
+    width: 4px;
+    height: 38px;
 }
 
 .hello-user{
+    position: absolute;
+    left: 160px;
+    top: 50px;
     color: #111111;
-    margin-left: 2px;
-    float: left;
-    margin-top: 33px;
-    border-left: 1px solid black;
-    padding-left: 10px;
+    font-family: "Open Sans";
+    font-size: 12px;
 }
 
 nav{
-    font-size: 120%;
-    display: inline-block;
-    font-weight: 600;
-    margin-left: 175px;
-    margin-right: 50px;
-    margin-top: 32px;
+    display: inline-block;    
 }
 
 nav > a{
+    position: absolute;
+    top: 50px;
     color: #111111;
-    font-weight: 500;
+    font-size: 14px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
     display: inline-block;
-    margin-right: 10%;
-    margin-right: 80px;
 }
 
 nav > a:first-child{
-    margin-right: 95px;
+    left: 454px;
 }
 
+nav > a:nth-child(2){
+    left: 627px;
+}
+
+nav > a:last-child{
+    left: 785px;
+}
+
+header > form > input{
+    display: inline-block;
+    position: absolute;
+    left: 960px;
+    top: 50px;
+    width: 140px;
+    box-sizing: border-box;
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+    border-top: 0px solid #ccc;
+    
+    font-size: 13px;
+    background-color: white;
+    padding: 1px 5px 1px 20px;
+}
+
+.top-right-icons{
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+
+.top-right-icons > a{
+    display: inline-block;
+}
