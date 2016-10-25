@@ -28,7 +28,7 @@
 		<a href="">Document Search</a>
 	</nav>
 	<form>
-		<input type="text" name="search" placeholder="Search on Google">
+		<input type="text" name="search" placeholder="Search on google..">
 	</form>
 
 	<div class="top-right-icons">
@@ -37,26 +37,6 @@
 		<a href="">{% load static %} <img src="{% static 'images/icn_exit.png' %}" alt="icn_exit" /></a>
 		<!--<a href=""><img src="{{ MEDIA_URL }}images/icn_settings.png"></a>-->
 	</div>
-	<section id="case-options">
-
-		<div id="left-case-options">
-			<a href="">Current Case</a>
-			<a href="">All Comments</a>
-		</div>
-		<div id="right-case-options">
-			<ul>
-				<li><a href="">Open Case</a></li>
-				<li><a href="">New Case</a></li>
-				<li><a href="">More Options</a>
-					<ul>
-						<li><a href=""></a>o1</li>
-						<li><a href=""></a>o2</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-
-	</section>
 </header>
 <div class="content">
 
