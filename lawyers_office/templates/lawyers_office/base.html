@@ -8,6 +8,40 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="{% static 'css/lawyers_office.css' %}">
 
+	<style type="text/css">
+		#icon_settings
+		{
+			background: url("{% static 'images/icn_settings.png' %}") no-repeat;
+		}
+		#icon_settings:hover {
+			background: url("{% static 'images/icn_settings_over.png' %}") no-repeat;
+        }
+		#icon_settings:focus {
+			background: url("{% static 'images/icn_settings_selected.png' %}") no-repeat;
+        }
+        #icon_info{
+        	background: url("{% static 'images/icn_info.png' %}") no-repeat;
+        }
+        #icon_info:hover{
+        	background: url("{% static 'images/icn_inf_over.png' %}") no-repeat;
+        }
+        #icon_info:focus{
+        	background: url("{% static 'images/icn_inf_selected.png' %}") no-repeat;
+        }
+        #icon_exit{
+        	background: url("{% static 'images/icn_exit.png' %}") no-repeat;
+        }
+        #icon_exit:hover{
+        	background: url("{% static 'images/icn_exit_over.png' %}") no-repeat;
+        }
+        #icon_exit:focus{
+        	background: url("{% static 'images/icn_exit_selected.png' %}") no-repeat;
+        }
+        #left-case-options a.active{
+			background: #0197d6;
+			text-decoration: none;
+		}
+	</style>
 </head>
 
 <body>
@@ -20,7 +54,6 @@
 	</div>
 	<hr class="vertical-line">
 	<div class="hello-user">Hello {{ user.username }} </div>
-	{% endif %}
 
 	<nav>
 		<a href="">Tag Search</a>
@@ -32,16 +65,21 @@
 	</form>
 
 	<div class="top-right-icons">
-		<a href="">{% load static %} <img src="{% static 'images/icn_settings.png' %}" alt="icn_settings" /></a>
-		<a href="">{% load static %} <img src="{% static 'images/icn_info.png' %}" alt="icn_info" /></a>
-		<a href="">{% load static %} <img src="{% static 'images/icn_exit.png' %}" alt="icn_exit" /></a>
+		<!--<a href="" id="icon_settings">{% load static %} <img src="{% static 'images/icn_settings.png' %}" alt="icn_settings" /></a>-->
+		<!--<a href="">{% load static %} <img src="{% static 'images/icn_info.png' %}" alt="icn_info" /></a>-->
+		<!--<a href="">{% load static %} <img src="{% static 'images/icn_exit.png' %}" alt="icn_exit" /></a>-->
+		<a href="" id="icon_settings" alt="icn_settings"></a>
+		<a href="" id="icon_info" ></a>
+		<a href="" id="icon_exit" ></a>
 		<!--<a href=""><img src="{{ MEDIA_URL }}images/icn_settings.png"></a>-->
 	</div>
 	<section id="case-options">
 
 		<div id="left-case-options">
-			<a href="">Current Case</a>
-			<a href="">All Comments</a>
+			<ul>
+				<li><a href="{% url 'add_new_case' %}" class = "active">New Case</a></li>
+				<li><a href="{% url 'comment_list' %}" >All Comments</a></li>
+			</ul>
 		</div>
 		<div id="right-case-options">
 			<ul>
@@ -57,6 +95,7 @@
 		</div>
 
 	</section>
+	{% endif %}
 </header>
 <div class="content">
 

@@ -93,32 +93,41 @@ header > form > input{
 .top-right-icons{
     display: inline-block;
     position: absolute;
-    right: 30px;
-    top: 25px;
-    
+    right: 10px;
+    top: 25px;    
 }
 
 .top-right-icons > a{
     display: inline-block;
-    
+    width: 24px;
+    height: 24px;
 }
 
 #case-options{
     display: block;
     width: 1366px;
-    height: 72px;
+    height: 75px;
     background: #ebebee;
+    border-bottom: 3px solid #0197d6;
 }
 
 #left-case-options{
     display: inline-block;
     margin-left: 10px;
-    margin-top: 20px;
-    margin-bottom: 3px;
+    margin-top: 28px;
     height: 44px;
 }
 
-#left-case-options > a{
+#left-case-options > ul{
+    display: inline-block;
+    list-style: none;
+}
+
+#left-case-options > ul > li{
+    display: inline-block;
+}
+
+#left-case-options a{
     display: inline-block;
     color: white;
     font-family: "Open Sans";
@@ -128,16 +137,12 @@ header > form > input{
     width: 158px;
     height: 44px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 13px;
+    margin-left: -2px;
     text-decoration: none;
 }
 
-#left-case-options > a:hover{
-    background: #0197d6;
-    text-decoration: none;
-}
-
-#left-case-options > a:first-child{
+#left-case-options a:first-child{
     
 }
 
@@ -145,8 +150,46 @@ header > form > input{
 
 #right-case-options{
     display: inline-block;
-    position: absolute;
-    left: 970px;
-    top: 100px;
 }
 
+#right-case-options ul{
+    display: inline-block;
+    list-style: none;
+}
+
+/* Need To replace with older version */
+#right-case-options > ul > li{
+    display: inline-block;
+}
+
+#right-case-options a{
+    display: inline-block;
+    position: absolute;
+    color: #111111;
+    top: 132px;
+    font-family: "Open Sans";
+}
+
+#right-case-options > ul > li:first-child > a{
+    left: 1024px; 
+}
+
+#right-case-options > ul > li:nth-child(2) > a{
+    left: 1134px;
+}
+
+#right-case-options > ul > li:nth-child(3) > a, li ul{
+    left: 1239px;
+}
+
+#right-case-options li:hover ul{
+    display: block;
+}
+
+#right-case-options li ul{
+    display: none;
+    width: inherit;
+}
+/* End */
+
+	

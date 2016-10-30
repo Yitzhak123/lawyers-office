@@ -1,4 +1,7 @@
 
+body{
+    
+}
 .jacobson-law-pa-logo {
     display: inline-block;
     margin-left: 8px;
@@ -48,9 +51,14 @@ nav > a{
     color: #111111;
     font-size: 14px;
     font-family: "Open Sans";
-    font-style: normal;
     font-weight: 600;
+    text-decoration: none;
     display: inline-block;
+}
+
+nav > a:hover{
+    color: #3753d8;
+    text-decoration: none;
 }
 
 nav > a:first-child{
@@ -68,9 +76,10 @@ nav > a:last-child{
 header > form > input{
     display: inline-block;
     position: absolute;
-    left: 960px;
+    left: 950px;
     top: 50px;
-    width: 140px;
+    
+    width: 230px;
     box-sizing: border-box;
     border: 0px;
     border-bottom: 1px solid #ccc;
@@ -78,16 +87,65 @@ header > form > input{
     
     font-size: 13px;
     background-color: white;
-    padding: 1px 5px 1px 20px;
+    padding: 1px 5px 1px 10px;
 }
 
 .top-right-icons{
     display: inline-block;
     position: absolute;
-    right: 20px;
-    top: 30px;
+    right: 30px;
+    top: 25px;
+    
 }
 
 .top-right-icons > a{
     display: inline-block;
+    
 }
+
+#case-options{
+    display: block;
+    width: 1366px;
+    height: 72px;
+    background: #ebebee;
+}
+
+#left-case-options{
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 28px;
+    height: 44px;
+}
+
+#left-case-options > a{
+    display: inline-block;
+    color: white;
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 16px;
+    background: #b9b9bb;
+    width: 158px;
+    height: 44px;
+    text-align: center;
+    padding-top: 10px;
+    text-decoration: none;
+}
+
+#left-case-options > a.active{
+    background: #0197d6;
+    text-decoration: none;
+}
+
+#left-case-options > a:first-child{
+    
+}
+
+
+
+#right-case-options{
+    display: inline-block;
+    position: absolute;
+    left: 970px;
+    top: 100px;
+}
+

@@ -4,6 +4,8 @@ from django.conf import settings
 urlpatterns = [
     url(r'^$', views.load_user_page, name='load_user_page'),
     url(r'^sign_up/$', views.add_new_user, name='add_new_user'),
+    url(r'^add_new_case/$', views.add_new_case, name='add_new_case'),
+    url(r'^comment_list/$', views.get_comment_list, name='comment_list'),
 
 
     # url(r'^user/new/$', views.add_new_user, name='add_new_user'),

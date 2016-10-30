@@ -49,6 +49,16 @@ def add_new_user(request):
                   {'form': form})
 
 
+@login_required
+def add_new_case(request):
+    lawyer = Lawyer.objects.get(username=request.user.username)
+    return render(request, 'lawyers_office/add_new_case.html')
+
+
+@login_required
+def get_comment_list(request):
+    return render(request, 'lawyers_office/comment_list.html')
+
 # @login_required
 # def user_detail(request, pk):
 #     user = get_object_or_404(DesktopUser, pk=pk)
