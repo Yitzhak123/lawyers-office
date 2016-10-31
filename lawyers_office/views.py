@@ -59,6 +59,16 @@ def add_new_case(request):
 def get_comment_list(request):
     return render(request, 'lawyers_office/comment_list.html')
 
+
+@login_required
+def load_settings_page(request):
+    return render(request, 'lawyers_office/settings.html')
+
+
+@login_required
+def load_info_page(request):
+    return render(request, 'lawyers_office/info.html')
+
 # @login_required
 # def user_detail(request, pk):
 #     user = get_object_or_404(DesktopUser, pk=pk)

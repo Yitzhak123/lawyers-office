@@ -73,21 +73,22 @@ nav > a:last-child{
     left: 785px;
 }
 
-header > form > input{
+header input{
     display: inline-block;
     position: absolute;
     left: 950px;
     top: 50px;
-    
-    width: 230px;
+    text-align: left;
+    width: 160px;
     box-sizing: border-box;
     border: 0px;
     border-bottom: 1px solid #ccc;
     border-top: 0px solid #ccc;
     
     font-size: 13px;
+    color: #CCC;
     background-color: white;
-    padding: 1px 5px 1px 10px;
+    padding: 0px 0px 0px 10px;
 }
 
 .top-right-icons{
@@ -146,50 +147,67 @@ header > form > input{
     
 }
 
-
-
 #right-case-options{
     display: inline-block;
 }
 
-#right-case-options ul{
-    display: inline-block;
-    list-style: none;
+#right-case-options > ul{
+  list-style: none;
+  text-align: center;
+  padding: 0;
 }
 
-/* Need To replace with older version */
 #right-case-options > ul > li{
     display: inline-block;
-}
-
-#right-case-options a{
-    display: inline-block;
     position: absolute;
-    color: #111111;
     top: 132px;
-    font-family: "Open Sans";
 }
 
-#right-case-options > ul > li:first-child > a{
-    left: 1024px; 
+#right-case-options > ul > li:first-child{
+    left: 1024px;
 }
 
-#right-case-options > ul > li:nth-child(2) > a{
+#right-case-options > ul > li:nth-child(2){
     left: 1134px;
 }
 
-#right-case-options > ul > li:nth-child(3) > a, li ul{
+#right-case-options > ul > li:nth-child(3){
     left: 1239px;
+}
+
+#right-case-options > ul > li > a{
+    color: #111111;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#right-case-options > ul > li:hover{
+    background: #63e5e7;
+}
+
+/*sub menus*/
+#right-case-options li ul{
+    position: absolute;
+    display: none;
+    width: inherit;
+    background: #ebebee;
+    /*background: #0197d6;*/
+    min-width: 120px;
 }
 
 #right-case-options li:hover ul{
     display: block;
 }
 
-#right-case-options li ul{
-    display: none;
-    width: inherit;
+#right-case-options li li {
+   display: block;
+   margin-left: -46px;
+   padding-left: 8px;
+   text-align: left;
 }
-/* End */
 
+
+#right-case-options li li > a{
+   padding-left: 3px;
+}
 	

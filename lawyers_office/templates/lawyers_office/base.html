@@ -61,16 +61,16 @@
 		<a href="">Document Search</a>
 	</nav>
 	<form>
-		<input type="text" name="search" placeholder="Search on Google">
+		<a href="https://www.google.co.il/"><input type="submit" value="search on google"/></a>
 	</form>
 
 	<div class="top-right-icons">
 		<!--<a href="" id="icon_settings">{% load static %} <img src="{% static 'images/icn_settings.png' %}" alt="icn_settings" /></a>-->
 		<!--<a href="">{% load static %} <img src="{% static 'images/icn_info.png' %}" alt="icn_info" /></a>-->
 		<!--<a href="">{% load static %} <img src="{% static 'images/icn_exit.png' %}" alt="icn_exit" /></a>-->
-		<a href="" id="icon_settings" alt="icn_settings"></a>
-		<a href="" id="icon_info" ></a>
-		<a href="" id="icon_exit" ></a>
+		<a href="{% url 'settings' %}" id="icon_settings" alt="icn_settings"></a>
+		<a href="{% url 'info' %}" id="icon_info" alt="icn_info"></a>
+		<a href="{% url 'add_new_case' %}" id="icon_exit" alt="icn_exit"></a>
 		<!--<a href=""><img src="{{ MEDIA_URL }}images/icn_settings.png"></a>-->
 	</div>
 	<section id="case-options">

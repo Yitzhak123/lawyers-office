@@ -6,7 +6,8 @@ urlpatterns = [
     url(r'^sign_up/$', views.add_new_user, name='add_new_user'),
     url(r'^add_new_case/$', views.add_new_case, name='add_new_case'),
     url(r'^comment_list/$', views.get_comment_list, name='comment_list'),
-
+    url(r'^settings/$', views.load_settings_page, name='settings'),
+    url(r'^info/$', views.load_info_page, name='info'),
 
     # url(r'^user/new/$', views.add_new_user, name='add_new_user'),
     # url(r'^user/(?P<pk>\d+)/$', views.user_detail, name='user_detail'),
