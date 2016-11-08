@@ -1,0 +1,4 @@
+
+def links(request):
+    from django.conf import settings
+    return {'links': settings.LINKS}

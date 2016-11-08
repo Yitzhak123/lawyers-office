@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'lawyers_office.context_processors.links',
             ],
         },
     },
@@ -124,3 +125,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/lawyers_office/'
 MEDIA_ROOT = '/home/yitzhak/DjangoProject2/lawyers_office/static'
 MEDIA_URL = 'http://localhost:8000/static/'
+TEMPLATE_CONTEXT_PROCESSORS = ('lawyers_office.context_processors.links',)

@@ -27,9 +27,8 @@ body{
     display: inline-block;
     left: 150px;
     top: 18px;
-    color: #111111;
-    width: 4px;
     height: 38px;
+    border-left: 2px solid #111111;
 }
 
 .hello-user{
@@ -45,32 +44,64 @@ nav{
     display: inline-block;    
 }
 
-nav > a{
+nav > div{
+    display: inline-block;
+}
+
+nav > div{
     position: absolute;
     top: 50px;
+    display: inline-block;
+}
+
+nav a{
     color: #111111;
     font-size: 14px;
     font-family: "Open Sans";
     font-weight: 600;
     text-decoration: none;
-    display: inline-block;
 }
 
-nav > a:hover{
+nav a:hover{
     color: #3753d8;
     text-decoration: none;
 }
 
-nav > a:first-child{
+/*nav a:first-child{
     left: 454px;
 }
 
-nav > a:nth-child(2){
+nav a:nth-child(2){
     left: 627px;
 }
 
-nav > a:last-child{
+nav a:last-child{
     left: 785px;
+}*/
+
+nav > div:first-child{
+    left: 454px;
+}
+
+nav > div:nth-child(2){
+    left: 627px;
+}
+
+nav > div:last-child{
+    left: 785px;
+}
+
+nav div div{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+}
+
+nav div:hover div{
+    display: block;
 }
 
 header input{
@@ -91,22 +122,21 @@ header input{
     padding: 0px 0px 0px 10px;
 }
 
-.top-right-icons{
+#top-right-icons{
     display: inline-block;
     position: absolute;
     right: 10px;
-    top: 25px;    
+    top: 18px;    
 }
 
-.top-right-icons > a{
-    display: inline-block;
-    width: 24px;
-    height: 24px;
+#top-right-icons img{
+    width: 20px;
+    height: 20px;
 }
 
 #case-options{
     display: block;
-    width: 1366px;
+    width: 100%;
     height: 75px;
     background: #ebebee;
     border-bottom: 3px solid #0197d6;
@@ -143,8 +173,8 @@ header input{
     text-decoration: none;
 }
 
-#left-case-options a:first-child{
-    
+#left-case-options a.active{
+    background: #0197d6;
 }
 
 #right-case-options{
@@ -210,4 +240,59 @@ header input{
 #right-case-options li li > a{
    padding-left: 3px;
 }
-	
+
+#secondary-options{
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+
+#secondary-top-right-icons{
+    position: absolute;
+    display: inline-block;
+    top: 185px;
+    right: 3%;
+}
+
+#secondary-top-right-icons img{
+    width: 25px;
+    height: 25px;
+}
+
+.image-links a{
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.image-links img{
+    display: inline-block;
+}
+
+.image-links img.over{
+    display: none;
+}
+
+.image-links img.on{
+    display: none;
+}
+
+.image-links a:hover img.orig{
+    display: none;
+}
+
+.image-links a:hover img.over{
+    display: inline-block;
+}
+
+.image-links a:focus img.orig{
+    display: none;
+}
+
+.image-links a:focus img.over{
+    display: none;
+}
+
+.image-links a:focus img.on{
+    display: inline-block;
+}

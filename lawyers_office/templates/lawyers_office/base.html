@@ -1,3 +1,4 @@
+
 {% load staticfiles %}
 <html>
 <head>
@@ -9,38 +10,7 @@
 	<link rel="stylesheet" href="{% static 'css/lawyers_office.css' %}">
 
 	<style type="text/css">
-		#icon_settings
-		{
-			background: url("{% static 'images/icn_settings.png' %}") no-repeat;
-		}
-		#icon_settings:hover {
-			background: url("{% static 'images/icn_settings_over.png' %}") no-repeat;
-        }
-		#icon_settings:focus {
-			background: url("{% static 'images/icn_settings_selected.png' %}") no-repeat;
-        }
-        #icon_info{
-        	background: url("{% static 'images/icn_info.png' %}") no-repeat;
-        }
-        #icon_info:hover{
-        	background: url("{% static 'images/icn_inf_over.png' %}") no-repeat;
-        }
-        #icon_info:focus{
-        	background: url("{% static 'images/icn_inf_selected.png' %}") no-repeat;
-        }
-        #icon_exit{
-        	background: url("{% static 'images/icn_exit.png' %}") no-repeat;
-        }
-        #icon_exit:hover{
-        	background: url("{% static 'images/icn_exit_over.png' %}") no-repeat;
-        }
-        #icon_exit:focus{
-        	background: url("{% static 'images/icn_exit_selected.png' %}") no-repeat;
-        }
-        #left-case-options a.active{
-			background: #0197d6;
-			text-decoration: none;
-		}
+
 	</style>
 </head>
 
@@ -52,39 +22,72 @@
 		<img src="http://images.lawyers.com/LBM_Images/Offices/law-firm-jacobson-law-pa-photo-1596644.jpg" alt="Jacobson-law-pa logo">
 		<p>Jacobson Law P.A.</p>
 	</div>
-	<hr class="vertical-line">
+	<div class="vertical-line"></div>
 	<div class="hello-user">Hello {{ user.username }} </div>
 
 	<nav>
-		<a href="">Tag Search</a>
-		<a href="">Text Search</a>
-		<a href="">Document Search</a>
+		<!--<ul>-->
+			<!--<li><a href="">Tag Search</a></li>-->
+			<!--<li><a href="">Text Search</a></li>-->
+			<!--<li><a href="">Document Search</a></li>-->
+		<!--</ul>-->
+		<div id="Tag-Search"><a href="">Tag Search</a>
+			<div>
+				<p>tag search</p>
+			</div>
+		</div>
+
+		<div id="Text-Search"><a href="">Text Search</a>
+			<div>
+				<p>text search</p>
+			</div>
+		</div>
+		<div id="Document-Search"><a href="">Document Search</a>
+			<div>
+				<p>document search</p>
+			</div>
+		</div>
 	</nav>
 	<form>
 		<a href="https://www.google.co.il/"><input type="submit" value="search on google"/></a>
 	</form>
 
-	<div class="top-right-icons">
-		<!--<a href="" id="icon_settings">{% load static %} <img src="{% static 'images/icn_settings.png' %}" alt="icn_settings" /></a>-->
-		<!--<a href="">{% load static %} <img src="{% static 'images/icn_info.png' %}" alt="icn_info" /></a>-->
-		<!--<a href="">{% load static %} <img src="{% static 'images/icn_exit.png' %}" alt="icn_exit" /></a>-->
-		<a href="{% url 'settings' %}" id="icon_settings" alt="icn_settings"></a>
-		<a href="{% url 'info' %}" id="icon_info" alt="icn_info"></a>
-		<a href="{% url 'add_new_case' %}" id="icon_exit" alt="icn_exit"></a>
-		<!--<a href=""><img src="{{ MEDIA_URL }}images/icn_settings.png"></a>-->
+	<div id="top-right-icons" class="image-links">
+		<a href="{% url 'settings' %}" id="icon_settings">
+			<img src="{% static 'images/icn_settings.png' %}" class="orig">
+			<img src="{% static 'images/icn_settings_over.png' %}" class="over">
+			<img src="{% static 'images/icn_settings_selected.png' %}" class="on">
+		</a>
+		<a href="{% url 'info' %}" id="icon_info">
+			<img src="{% static 'images/icn_info.png' %}" class="orig">
+			<img src="{% static 'images/icn_inf_over.png' %}" class="over">
+			<img src="{% static 'images/icn_inf_selected.png' %}" class="on">
+		</a>
+		<a href="{% url 'logout' %}" id="icon_exit">
+			<img src="{% static 'images/icn_exit.png' %}" class="orig">
+			<img src="{% static 'images/icn_exit_over.png' %}" class="over">
+			<img src="{% static 'images/icn_exit_selected.png' %}" class="on">
+		</a>
+
 	</div>
 	<section id="case-options">
 
 		<div id="left-case-options">
 			<ul>
-				<li><a href="{% url 'add_new_case' %}" class = "active">New Case</a></li>
-				<li><a href="{% url 'comment_list' %}" >All Comments</a></li>
+				{% for link in links %}
+					{% if link.active %}
+				<li> <a href="{% url 'get_left_top_nav_links' link.url %}" class = "active">{{ link.name }}</a> </li>
+					{% else %}
+				<li> <a href="{% url 'get_left_top_nav_links' link.url %}">{{ link.name }}</a> </li>
+					{% endif %}
+				{% endfor %}
+
 			</ul>
 		</div>
 		<div id="right-case-options">
 			<ul>
 				<li><a href="">Open Case</a></li>
-				<li><a href="">New Case</a></li>
+				<li><a href="{% url 'get_left_top_nav_links' 'new_case' %}">New Case</a></li>
 				<li><a href="">More Options</a>
 					<ul>
 						<li><a href=""></a>o1</li>
@@ -94,6 +97,43 @@
 			</ul>
 		</div>
 
+	</section>
+
+	<section id="secondary-options">
+		<div class="temp"> test </div>
+		<div id="secondary-top-right-icons" class="image-links">
+			<a href="{% url 'upload_file' %}" id="icon_upload">
+				<img src="{% static 'images/icn_upload.png' %}" class="orig">
+				<img src="{% static 'images/icn_upload_over.png' %}" class="over">
+				<img src="{% static 'images/icn_upload_on.png' %}" class="on">
+			</a>
+			<a href="{% url 'open_file' %}" id="icon_open">
+				<img src="{% static 'images/icn_open.png' %}" class="orig">
+				<img src="{% static 'images/icn_open_over.png' %}" class="over">
+				<img src="{% static 'images/icn_open_on.png' %}" class="on">
+			</a>
+			<a href="{% url 'reclassify' %}" id="icon_reclassify">
+				<img src="{% static 'images/icn_reclassify.png' %}" class="orig">
+				<img src="{% static 'images/icn_reclassify_over.png' %}" class="over">
+				<img src="{% static 'images/icn_reclassify_on.png' %}" class="on">
+			</a>
+			<a href="{% url 'save_file' %}" id="icon_save">
+				<img src="{% static 'images/icn_save.png' %}" class="orig">
+				<img src="{% static 'images/icn_save_over.png' %}" class="over">
+				<img src="{% static 'images/icn_save_on.png' %}" class="on">
+			</a>
+			<a href="{% url 'delete_file' %}" id="icon_delete">
+				<img src="{% static 'images/icn_delete.png' %}" class="orig">
+				<img src="{% static 'images/icn_delete_over.png' %}" class="over">
+				<img src="{% static 'images/icn_delete_on.png' %}" class="on">
+			</a>
+			<a href="{% url 'more_options' %}" id="icon_more">
+				<img src="{% static 'images/icn_more.png' %}" class="orig">
+				<img src="{% static 'images/icn_more_over.png' %}" class="over">
+				<img src="{% static 'images/icn_more_on.png' %}" class="on">
+			</a>
+
+		</div>
 	</section>
 	{% endif %}
 </header>

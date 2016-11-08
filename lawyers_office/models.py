@@ -39,3 +39,15 @@ class Lawyer(models.Model):
         return '[name = '+str(self.username)+']'
 
 
+# class LawyerManager(Lawyer):
+
+# This Model is for internal use
+class Link(models.Model):
+    name = models.CharField(max_length=50)
+    url = models.CharField(max_length=50)
+    active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "name = "+self.name+", url = "+self.url+\
+               ", active = "+str(self.active)
+

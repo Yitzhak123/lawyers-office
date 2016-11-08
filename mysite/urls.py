@@ -13,6 +13,6 @@ urlpatterns = [
     url(r'^accounts/logout/$', django.contrib.auth.views.logout,
         name='logout', kwargs={'next_page': '/lawyers_office/'}),
     url(r'^lawyers_office/', include('lawyers_office.urls')),
-    #url(r'^static/(?P<path>.*)$', django.views.static.serve,
+    # url(r'^static/(?P<path>.*)$', django.views.static.serve,
     #    {'document_root': settings.MEDIA_ROOT}),
 ]
