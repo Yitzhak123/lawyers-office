@@ -2,9 +2,48 @@
 {% extends 'lawyers_office/base.html' %}
 
 {% block content %}
-    <h1>Add new Lawyer </h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-    	{{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+
+{% if not user.is_authenticated %}
+<div id="registration-page-content" class="informer-page">
+    <div class="top-left-corner-title"><span>informer</span></div>
+    <div class="informer-page-title">Welcome to informer</div>
+    <div id="registration_form" class="informer-form">
+
+        <form method="post" class="post-form">{% csrf_token %}
+
+            <p class="form-title"> Please enter your Details to Register </p>
+            <p class="form-errors">{{ form.username.errors.as_text }}</p>
+            <div id="username_textbox">
+                {{ form.username.label_tag }}
+                <!--<input class="form-control" id="username" maxlength="30" name="{{ form.username.html_name }}" value="username" type="text" />-->
+                {{ form.username }}
+            </div>
+            <p class="form-errors">{{ form.email.errors.as_text }}</p>
+            <div id="email_textbox">
+                {{ form.email.label_tag }}
+                <!--<input class="form-control" id="username" maxlength="30" name="{{ form.username.html_name }}" value="username" type="text" />-->
+                {{ form.email }}
+            </div>
+            {% if not form.email.errors and not form.username.errors%}
+                <p class="form-errors">{{ form.email.errors.as_text }}</p>
+            {% endif %}
+            <div id="password_textbox">
+                {{ form.password.label_tag }}
+                <!--<input class="form-control" id="password" maxlength="30" name="{{ form.password.html_name }}" value="password" type="hidden" />-->
+                {{ form.password }}
+            </div>
+
+            <input type="submit" value="Sign Up" />
+
+        </form>
+
+    </div>
+</div>
+
+<!--<script>-->
+    <!--function decrease_margin_bottom(id){-->
+        <!--document.getElementById(id).style["margin-bottom"] = "5px";-->
+    <!--}-->
+<!--</script>-->
+{% endif %}
 {% endblock %}

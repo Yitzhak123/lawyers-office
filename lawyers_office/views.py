@@ -11,10 +11,17 @@ from .forms import *
 @login_required
 def load_user_page(request):
     lawyer = Lawyer.objects.get(username=request.user.username)
-    records = lawyer.records.all()
+    cases = lawyer.cases.all()
+    if not Link.objects.all().exists():
+        Link.objects.all().delete()
+        Link.objects.create(name='New Case', url='new_case', active=True)
+        Link.objects.create(name='All Comments', url='comment_list')
     links = init_links('new_case')
+    tag_search_content_list = ['Who', 'About who', 'What', 'When', 'Where', 'Claim Exhibit',
+                               'Defence Exhibit', 'Interrogation time', 'Interrogation location']
     return render(request, 'lawyers_office/new_case.html',
-                  {'lawyer': lawyer, 'records': records, 'links': links})
+                  {'lawyer': lawyer, 'cases': cases, 'links': links,
+                   'tag_search_content_list': tag_search_content_list})
 
 
 def add_new_user(request):

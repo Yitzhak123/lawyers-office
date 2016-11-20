@@ -1,5 +1,7 @@
 
+<!--<!DOCTYPE html>-->
 {% load staticfiles %}
+
 <html>
 <head>
 
@@ -7,12 +9,20 @@
 
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="{% static 'css/lawyers_office.css' %}">
-
+	<link rel="stylesheet" type="text/css" href="{% static 'css/lawyers_office.css' %}">
+	<!--<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>-->
 	<style type="text/css">
+
+	input:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0px 1000px white inset;
+	}
+
+
 
 	</style>
 </head>
+
+
 
 <body>
 <header>
@@ -20,7 +30,7 @@
 	{% if user.is_authenticated %}
 	<div class="jacobson-law-pa-logo">
 		<img src="http://images.lawyers.com/LBM_Images/Offices/law-firm-jacobson-law-pa-photo-1596644.jpg" alt="Jacobson-law-pa logo">
-		<p>Jacobson Law P.A.</p>
+		<!--<p>Jacobson Law P.A.</p>-->
 	</div>
 	<div class="vertical-line"></div>
 	<div class="hello-user">Hello {{ user.username }} </div>
@@ -32,14 +42,30 @@
 			<!--<li><a href="">Document Search</a></li>-->
 		<!--</ul>-->
 		<div id="Tag-Search"><a href="">Tag Search</a>
-			<div>
-				<p>tag search</p>
+			<div id="tag-search-content">
+				<p class="top-right-corner-title">Search & Create Comment</p>
+				<ol id="tag-search-content-list">
+					{% for select_box in tag_search_content_list %}
+						<li>{{ select_box }}
+							<select name='{{ select_box }}'>
+								<option value="option1">option1</option>
+								<option value="option2">option2</option>
+							</select>
+						</li>
+						<br>
+
+					{% endfor %}
+				</ol>
 			</div>
 		</div>
 
 		<div id="Text-Search"><a href="">Text Search</a>
-			<div>
-				<p>text search</p>
+			<div id="text-search-content">
+				<form>
+					<input type="radio" name="gender" value="male" checked> Male
+					<input type="radio" name="gender" value="female"> Female
+					<input type="radio" name="gender" value="other"> Other
+				</form>
 			</div>
 		</div>
 		<div id="Document-Search"><a href="">Document Search</a>
@@ -87,8 +113,11 @@
 		<div id="right-case-options">
 			<ul>
 				<li><a href="">Open Case</a></li>
-				<li><a href="{% url 'get_left_top_nav_links' 'new_case' %}">New Case</a></li>
-				<li><a href="">More Options</a>
+				<li><a class="new_case" href="{% url 'get_left_top_nav_links' 'new_case' %}">New Case
+						<span class="new_case-speech-bubble">Please press to add case details</span>
+					</a>
+				</li>
+				<li><a href="">More Options &#x25BE;</a>
 					<ul>
 						<li><a href=""></a>o1</li>
 						<li><a href=""></a>o2</li>
@@ -97,10 +126,12 @@
 			</ul>
 		</div>
 
+		<img src="{% static 'images/line_instruction.png' %}"  class="border-line">
+
 	</section>
 
 	<section id="secondary-options">
-		<div class="temp"> test </div>
+		<div id="secondary-options-left-top-text"> Documents </div>
 		<div id="secondary-top-right-icons" class="image-links">
 			<a href="{% url 'upload_file' %}" id="icon_upload">
 				<img src="{% static 'images/icn_upload.png' %}" class="orig">

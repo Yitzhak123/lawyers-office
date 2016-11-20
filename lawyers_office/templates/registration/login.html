@@ -3,13 +3,39 @@
 
 {% block content %}
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+{% if not user.is_authenticated %}
+<div id="content-login-page" class="informer-page">
+    <div class="top-left-corner-title"><span>informer</span></div>
+    <div class="informer-page-title">Welcome to informer</div>
+    <div id="login_form" class="informer-form">
+        {% if form.errors %}
+        <p class="form-errors">Your username and password didn't match. Please try again.</p>
+        {% endif %}
+        <form method="post" action="{% url 'login' %}">{% csrf_token %}
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<table>
+            <p class="form-title"> Please enter your Details to Login </p>
+            <div id="username_textbox">
+                {{ form.username.label_tag }}
+                <!--<input class="form-control" id="username" maxlength="30" name="{{ form.username.html_name }}" value="username" type="text" />-->
+                {{ form.username }}
+            </div>
+            <div id="password_textbox">
+                {{ form.password.label_tag }}
+                <!--<input class="form-control" id="password" maxlength="30" name="{{ form.password.html_name }}" value="password" type="hidden" />-->
+                {{ form.password }}
+            </div>
+
+            <input type="submit" value="Login" />
+            <input type="hidden" name="next" value="{{ next }}" />
+
+        </form>
+
+        <span class="sign-up-here">Forgot your password ? Sign up <a href="{% url 'add_new_user' %}">here</a></span>
+    </div>
+</div>
+
+{% endif %}
+<!--<table>
 <tr>
     <td>{{ form.username.label_tag }}</td>
     <td>{{ form.username }}</td>
@@ -18,12 +44,6 @@
     <td>{{ form.password.label_tag }}</td>
     <td>{{ form.password }}</td>
 </tr>
-</table>
-
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
-</form>
-
-<a href="{% url 'add_new_user' %}"> <h3> new user? sign up here </h3> </a>
+</table>-->
 
 {% endblock %}

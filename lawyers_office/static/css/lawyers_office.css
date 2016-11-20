@@ -1,57 +1,74 @@
 
+/*img, div, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}*/
+
 body{
     
 }
 .jacobson-law-pa-logo {
     display: inline-block;
-    margin-left: 8px;
+    width: 113px;
+    margin-left: 1.7%;
 }
 
 .jacobson-law-pa-logo > img{
-    height: 43px;
-    width: 40px;
+    height: 53px;
+    width: 50px;
     display: block;
-    margin-left: 40px;
+    margin: auto;
     margin-top: 7px;
+    margin-bottom: 5px;
 }
 
-.jacobson-law-pa-logo > p{
+/*.jacobson-law-pa-logo > p{
     font-size: 70%;
     font-weight: 600;
     text-transform: uppercase;
     margin-top: 8px;
-}
+}*/
 
 .vertical-line{
     position: absolute;
     display: inline-block;
-    left: 150px;
     top: 18px;
-    height: 38px;
-    border-left: 2px solid #111111;
+    height: 43px;
+    margin-left: 1.2%;
+    border-left: 1px solid #111111;
 }
 
 .hello-user{
     position: absolute;
-    left: 160px;
-    top: 50px;
+    display: inline-block;
+    top: 44px;
     color: #111111;
     font-family: "Open Sans";
     font-size: 12px;
-}
-
-nav{
-    display: inline-block;    
+    margin-left: 2%;
 }
 
 nav > div{
     display: inline-block;
-}
-
-nav > div{
     position: absolute;
-    top: 50px;
-    display: inline-block;
+    top: 21px;
+    width: 158px;
+    height: 54px;
+    text-align: center;
+    padding-top: 17px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0 0;
+}
+
+nav > div:hover{
+    color: #ffffff;
+    background: #0197d6;
 }
 
 nav a{
@@ -59,58 +76,85 @@ nav a{
     font-size: 14px;
     font-family: "Open Sans";
     font-weight: 600;
+}
+
+nav a, nav a:hover, nav a:focus{
+    color: inherit;
     text-decoration: none;
 }
-
-nav a:hover{
-    color: #3753d8;
-    text-decoration: none;
-}
-
-/*nav a:first-child{
-    left: 454px;
-}
-
-nav a:nth-child(2){
-    left: 627px;
-}
-
-nav a:last-child{
-    left: 785px;
-}*/
 
 nav > div:first-child{
-    left: 454px;
+    left: 31%;
 }
 
 nav > div:nth-child(2){
-    left: 627px;
+    left: 45%;
 }
 
 nav > div:last-child{
-    left: 785px;
+    left: 58%;
 }
 
 nav div div{
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    width: 509px;
+    height: 636px;
+    color: #111111;
+    text-align: left;
+    background-color: #ffffff;
+    outline-color: #0197d6;
+    border: 1px solid #0197d6;
+    box-sizing: border-box;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
+    /*padding: 12px 16px;*/
+    margin-top: 17px;
+}
+
+nav div div .top-right-corner-title{
+    padding-top: 18px;
+    padding-left: 19px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+nav ol#tag-search-content-list{
+    margin-top: 30px;
+    padding-left: 35px;
+}
+
+nav ol#tag-search-content-list li{
+    margin-bottom: 10px;
+}
+
+nav ol#tag-search-content-list select{
+/*    margin-left: 100px;
+    width: 232px;
+    height: 32px;
+    background: #ffffff;*/
+    width: 232px;
+    background: #ffffff;
+    position: static;
+    position: absolute;
+    display: inline-block;
+    left: 0px;
+    margin: -6px 100px 0px 210px;
+    padding-bottom: 7px;
+    padding-top: 8px;
 }
 
 nav div:hover div{
     display: block;
+    /*margin-left: 2px;*/
 }
 
 header input{
     display: inline-block;
     position: absolute;
-    left: 950px;
-    top: 50px;
+    left: 74%;
+    top: 44px;
     text-align: left;
-    width: 160px;
+    width: 18%;
     box-sizing: border-box;
     border: 0px;
     border-bottom: 1px solid #ccc;
@@ -125,7 +169,7 @@ header input{
 #top-right-icons{
     display: inline-block;
     position: absolute;
-    right: 10px;
+    left: 92%;
     top: 18px;    
 }
 
@@ -137,15 +181,14 @@ header input{
 #case-options{
     display: block;
     width: 100%;
-    height: 75px;
+    height: 76px;
     background: #ebebee;
-    border-bottom: 3px solid #0197d6;
 }
 
 #left-case-options{
     display: inline-block;
-    margin-left: 10px;
-    margin-top: 28px;
+    margin-left: -0.8%;
+    margin-top: 32px;
     height: 44px;
 }
 
@@ -190,19 +233,23 @@ header input{
 #right-case-options > ul > li{
     display: inline-block;
     position: absolute;
-    top: 132px;
+    top: 125px;
+    padding-top: 4px;
+    width: 94px;
+    height: 27px;
+    border: 1px solid rgba(158, 158, 158, 0.87);
 }
 
 #right-case-options > ul > li:first-child{
-    left: 1024px;
+    left: 73%;
 }
 
 #right-case-options > ul > li:nth-child(2){
-    left: 1134px;
+    left: 82.5%;
 }
 
 #right-case-options > ul > li:nth-child(3){
-    left: 1239px;
+    left: 91%;
 }
 
 #right-case-options > ul > li > a{
@@ -213,6 +260,42 @@ header input{
 
 #right-case-options > ul > li:hover{
     background: #63e5e7;
+}
+
+#right-case-options a.new_case {
+    position: relative;
+    display: inline-block;
+}
+
+#right-case-options a.new_case  .new_case-speech-bubble {
+    visibility: hidden;
+    width: 120px;
+    height: 30px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+#right-case-options a.new_case .new_case-speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 0 10px 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+#right-case-options a.new_case:hover .new_case-speech-bubble {
+    visibility: visible;
 }
 
 /*sub menus*/
@@ -241,22 +324,43 @@ header input{
    padding-left: 3px;
 }
 
+#case-options img.border-line{
+    position: absolute;
+    display: inline-block;
+    top: 12px;
+    left: 0px;
+    width: 100%;
+    height: 153px;
+    clip: rect(142px,2000px,149px,0px);
+    z-index: -1;
+}
+
 #secondary-options{
     display: block;
     width: 100%;
     height: 50px;
 }
 
+#secondary-options-left-top-text{
+    position: absolute;
+    top: 185px;
+    left: 3%;
+    color: #111111;
+    font-size: 14px;
+    font-family: "Open Sans";
+    font-weight: 600;
+}
+
 #secondary-top-right-icons{
     position: absolute;
     display: inline-block;
-    top: 185px;
-    right: 3%;
+    top: 174px;
+    right: 2.7%;
 }
 
 #secondary-top-right-icons img{
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
 }
 
 .image-links a{
@@ -265,6 +369,153 @@ header input{
     cursor: pointer;
 }
 
+/* general informer page style */
+.informer-page{
+    background: #0197d6;
+    width: 100%;
+    height: 100%;
+    color: #090d14;
+}
+
+.informer-page .informer-page-title{
+    position: absolute;
+    display: inline-block;
+    top: 10%;
+    left: 0;
+    right: 23%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    font-size: 23px;
+    color: #eceddd;
+    border-left: 3px solid;
+    border-bottom: 2px solid;
+    padding-left: 7px;
+    padding-bottom: 7px;
+}
+
+.top-left-corner-title{
+    position: absolute;
+    left: 0;
+    top: -5px;
+    display: inline-block;
+    width: 148px;
+    height: 50px;
+    font-size: 31px;
+    padding-left: 8px;
+    font-weight: 600;
+    color: #0a0f16;
+    background-color: #f3f7fb;
+}
+
+.top-left-corner-title::first-letter{
+    color: #c4261e;
+    font-size: 125%;
+}
+
+.informer-form{
+    display: inline-block;
+    position: absolute;
+    top: 27%;
+    left: 0;
+    right: 0.8%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 38%;
+    height: 300px;
+    padding-top: 15px;
+    background: #f6f6f8;
+    border: 4px solid;
+    border-radius: 14px;
+}
+
+.informer-form .form-title{
+    text-align: center;
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+
+.informer-form p.form-errors{
+    font-size: 16px;
+    color: #cf132c;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 2px; 
+    margin-top: -8px;
+}
+
+.informer-form .sign-up-here{
+    font-size: 16px;
+    text-align: center;
+    margin-left: 28%;
+}
+
+.informer-form .sign-up-here a{
+    color: #1955d0;
+    font-weight: bold;
+}
+
+.informer-form div{
+    font-size: 20px;
+    margin-bottom: 12px;
+    margin-left: 5%
+}
+
+.informer-form div input{
+    width: 64%;
+    height: 37px;
+    color: inherit;
+    font-size: inherit;
+    background: #f9f9fb;
+    display: inline-block;
+    border: 2px solid #0197d6;
+    outline-color: #1955d0;
+    border-radius: 4px;
+    padding: 5px 8px 2px 4px;
+}
+
+.informer-form #password_textbox input{
+    margin-left: 1.3px;
+}
+
+.informer-form input[type="submit"]{
+    margin-left: 32%;
+    font-weight: 600;
+    margin-top: 8px;
+    width: 30%;
+    height: 40px;
+    font-size: 23px;
+    border: 3px solid rgba(255, 87, 34, 0.67);
+    border-radius: 6px;
+    background-color: #a8a8ac;
+    outline: none;
+}
+
+.informer-form input[type="submit"]:hover{
+    color: #1955d0;
+    background-color: #9399a6;
+}
+
+/* end of login page style */
+
+#registration-page-content input[id=id_email]{
+    margin-left: 42px;
+}
+
+#registration-page-content #registration_form{
+    height: 350px;
+}
+
+/*#registration-page-content p.form-errors{
+    padding-bottom: 
+}*/
+
+/* General pattern how to arrange images that uses as links.  
+   It can be implement anywhere - just need to define class image-links and 
+   define three images inside links with classes orig, over, on 
+*/
 .image-links img{
     display: inline-block;
 }
@@ -296,3 +547,4 @@ header input{
 .image-links a:focus img.on{
     display: inline-block;
 }
+/* End */
