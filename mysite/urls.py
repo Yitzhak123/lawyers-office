@@ -1,7 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
-
+from django.contrib.auth.forms import AuthenticationForm
 import django.contrib.auth.views
 
 from django.contrib import admin

@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 from django.template import RequestContext
 from .models import *
 from .forms import *
@@ -12,10 +13,10 @@ from .forms import *
 def load_user_page(request):
     lawyer = Lawyer.objects.get(username=request.user.username)
     cases = lawyer.cases.all()
-    if not Link.objects.all().exists():
-        Link.objects.all().delete()
-        Link.objects.create(name='New Case', url='new_case', active=True)
-        Link.objects.create(name='All Comments', url='comment_list')
+    # if not Link.objects.all().exists():
+    Link.objects.all().delete()
+    Link.objects.create(name='New Case', url='new_case', active=True)
+    Link.objects.create(name='All Comments', url='comment_list')
     links = init_links('new_case')
     tag_search_content_list = ['Who', 'About who', 'What', 'When', 'Where', 'Claim Exhibit',
                                'Defence Exhibit', 'Interrogation time', 'Interrogation location']
@@ -30,7 +31,10 @@ def add_new_user(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.add_new_lawyer()
-            return redirect('login')
+            new_user = authenticate(username=form.cleaned_data['username'],
+                                    password=form.cleaned_data['password'])
+            login(request, new_user)
+            return redirect('load_user_page')
     else:
         form = LawyerForm()
     return render(request, 'lawyers_office/add_new_user.html',
